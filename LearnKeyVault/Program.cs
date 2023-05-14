@@ -19,11 +19,11 @@ namespace LearnKeyVault
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                // .ConfigureAppConfiguration((context, config) =>
-                // {
-                // var keyVaultEndpoint = new Uri("https://myintellikeyvault.vault.azure.net/");
-                // config.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
-                // })
+                .ConfigureAppConfiguration((context, config) =>
+                {
+                var keyVaultEndpoint = new Uri("https://myintellikeyvault2.vault.azure.net/");
+                config.AddAzureKeyVault(keyVaultEndpoint, new DefaultAzureCredential());
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
